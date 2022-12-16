@@ -1,7 +1,8 @@
 <template>
     <footer id="Footer">
-        <p>Stake Burguer &copy; 2022</p>
+        <p>Stake Burguer &copy; 2022 </p>
     </footer>
+   
     
 </template>
 
