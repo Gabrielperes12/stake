@@ -14,11 +14,12 @@
 
 #main-banner{
     background-image: url('/public/img/burger.jpg');
-    background-position:  0px -420px;
+    height: 650px;
+    background-position: center center;
     background-size: cover;
-    height: 600px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 #main-banner h1{
  color: #f3b01f;
