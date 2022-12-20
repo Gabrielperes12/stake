@@ -131,7 +131,7 @@
     
     .delete-btn:hover {
       background-color: transparent;
-      color: #970303;
+      color: #800202;
     }
     
   </style>
