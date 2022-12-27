@@ -37,51 +37,51 @@
     </div>
   </template>
   <script>
-    export default {
-      name: "Dashboard",
-      data() {
-        return {
-          burgers: null,
-          burger_id: null,
-          status: []
-        }
-      },
-      methods: {
-        async getPedidos() {
-          const req = await fetch('http://localhost:3000/burgers')
-          const data = await req.json()
-          this.burgers = data
-          // Resgata os status de pedidos
-          this.getStatus()
-        },
-        async getStatus() {
-          const req = await fetch('http://localhost:3000/status')
-          const data = await req.json()
-          this.status = data
-        },
-        async deleteBurger(id) {
-          const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-            method: "DELETE"
-          });
-          const res = await req.json()
-          this.getPedidos()
-        },
-        async updateBurger(event, id) {
-          const option = event.target.value;
-          const dataJson = JSON.stringify({status: option});
-          const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-            method: "PATCH",
-            headers: { "Content-Type" : "application/json" },
-            body: dataJson
-          });
-          const res = await req.json()
-          console.log(res)
-        }
-      },
-      mounted () {
-      this.getPedidos()
+      export default {
+    name: "Dashboard",
+    data() {
+      return {
+        burgers: null,
+        burger_id: null,
+        status: []
       }
+    },
+    methods: {
+      async getPedidos() {
+        const req = await fetch('http://localhost:3000/burgers')
+        const data = await req.json()
+        this.burgers = data
+        // Resgata os status de pedidos
+        this.getStatus()
+      },
+      async getStatus() {
+        const req = await fetch('http://localhost:3000/status')
+        const data = await req.json()
+        this.status = data
+      },
+      async deleteBurger(id) {
+        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+          method: "DELETE"
+        });
+        const res = await req.json()
+        this.getPedidos()
+      },
+      async updateBurger(event, id) {
+        const option = event.target.value;
+        const dataJson = JSON.stringify({status: option});
+        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+          method: "PATCH",
+          headers: { "Content-Type" : "application/json" },
+          body: dataJson
+        });
+        const res = await req.json()
+        console.log(res)
+      }
+    },
+    mounted () {
+    this.getPedidos()
     }
+  }
   </script>
   
   <style scoped>
